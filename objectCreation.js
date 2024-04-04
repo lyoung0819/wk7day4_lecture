@@ -18,50 +18,53 @@ console.log(myCar.drive);
 myCar.drive(100)
 
 
-// -----------
-
-// ES5 OBJECT PROTOTYPES
+// - -- - - - - - -- - -- - -- - -- - - -- - - - - - -- - - - -- - - - - - 
+//  >>> ES5 OBJECT PROTOTYPES <<< 
 // The class keyword wasn't added to JS until ES6, and replaces the functionality we are about to talk about. You will still see alot of ES5 prototypes in the wild, so be sure to understand what they are doing.
+// - -- - - - - - -- - -- - -- - -- - - -- - - - - - -- - - - -- - - - - - 
+// - -- - - - - - -- - -- - -- - -- - - -- - - - - - -- - - - -- - - - - - 
 
-// Lets build out a JS object to be reuseable.
+// // Lets build out a JS object to be reuseable.
 
-let testPerson = {};
-testPerson.age = 22;
-testPerson.name = 'John'
-testPerson.jump = function(){console.log(this.name + ' just jumped')}
-testPerson.squat = function(){console.log(this.name + ' just squated')}
+// let testPerson = {};
+// testPerson.age = 22;
+// testPerson.name = 'John'
+// testPerson.jump = function(){console.log(this.name + ' just jumped')}
+// testPerson.squat = function(){console.log(this.name + ' just squated')}
 
-console.table(testPerson);
-testPerson.squat()
-
-
-// Remember - to execute a function, you need to include the paranthesese 
-
-// JS Functions are Objects!
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions
-
-function doesNothing(){};
-
-console.log(doesNothing); // will output the actual function itself
-console.log(typeof doesNothing); // 'function'
-
-doesNothing.aKey = 'a value';
-console.log(doesNothing.aKey); // It can hold both properties AND methods! 
+// console.table(testPerson);
+// testPerson.squat()
 
 
-const createPerson = function(name, age){
-    createPerson.realName = name; // use .realName because .name is already a read-only property
-    createPerson.age = age;
-    createPerson.jump = function(){console.log(this.realName + ' just jumped')}
-    createPerson.squat = function(){console.log(this.realName + ' just squated')}
+// // Remember - to execute a function, you need to include the paranthesese 
 
-    return createPerson;
-}
+// // JS Functions are Objects!
+// // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions
 
-let person1 = createPerson('Julie', 25);
-console.log(person1)
-person1.jump()
-person1.squat()
+// function doesNothing(){};
+
+// console.log(doesNothing); // will output the actual function itself
+// console.log(typeof doesNothing); // 'function'
+
+// doesNothing.aKey = 'a value';
+// console.log(doesNothing.aKey); // It can hold both properties AND methods! 
+
+
+// const createPerson = function(name, age){
+//     createPerson.realName = name; // use .realName because .name is already a read-only property
+//     createPerson.age = age;
+//     createPerson.jump = function(){console.log(this.realName + ' just jumped')}
+//     createPerson.squat = function(){console.log(this.realName + ' just squated')}
+
+//     return createPerson;
+// }
+
+// let person1 = createPerson('Julie', 25);
+// console.log(person1)
+// person1.jump()
+// person1.squat()
+// - -- - - - - - -- - -- - -- - -- - - -- - - - - - -- - - - -- - - - - - 
+// - -- - - - - - -- - -- - -- - -- - - -- - - - - - -- - - - -- - - - - - 
 
 
 // NEW Keyword
