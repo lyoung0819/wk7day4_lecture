@@ -160,3 +160,25 @@ console.log(dan);
 
 dan.jump();
 dan.squat();
+
+// You can modify exisiting built in prototypes at an time: 
+// This is considered BAD PRACTICE because it can lead to confusion and unforseen side effects 
+
+
+console.clear()
+//  ---- 
+// Strings in JS have toUpperCase and toLowerCase, but not title casing, howver we can built it ourselves! 
+
+String.prototype.toTitleCase = function(){
+    words = this.toLowerCase().split(' ');
+    for (let i=0; i < words.length; i++){
+        words[i] = words[i][0].toUpperCase() + words[i].slice(1)
+    }
+    return words.join(' ');
+};
+
+// When instantiating -> you can use .prototype to save to the object's prototype 
+
+const sentence = 'toDay is ThurSday AprIl 4TH anD wE ArE LeanNing JavAscRipt';
+console.log(sentence.toTitleCase());
+
